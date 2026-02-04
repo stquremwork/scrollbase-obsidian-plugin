@@ -1,305 +1,202 @@
-# Scrollbase plugin for Obsidian
+# Scrollbase Plugin for Obsidian
+Universal plugin for viewing and organizing media library in Obsidian with support for movies, TV shows, anime, manga, books, and games.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Obsidian](https://img.shields.io/badge/Obsidian-0.15.0+-purple)
-![License](https://img.shields.io/badge/license-MIT-green)
+<div align="center">
 
-Универсальный плагин для просмотра и организации медиа-библиотеки в Obsidian с поддержкой фильмов, сериалов, аниме, манги, книг и игр.
+<a href="#features"><kbd> <br> Features <br> </kbd></a>&ensp;&ensp;
+<a href="#installation"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
+<a href="#usage"><kbd> <br> Usage <br> </kbd></a>&ensp;&ensp;
+<a href="#configuration"><kbd> <br> Configuration <br> </kbd></a>&ensp;&ensp;
+<a href="#development"><kbd> <br> Development <br> </kbd></a>&ensp;&ensp;
 
-## ✨ Возможности
+<br>
 
-### 🎯 Основные функции
-- **Динамические фильтры** - фильтры адаптируются под тип контента
-- **Два режима отображения** - таблица и карточки
-- **Адаптивный дизайн** - работает на всех устройствах
-- **Умная сортировка** - по любой колонке с сохранением направления
-- **Быстрый поиск** - мгновенный поиск по названию с debounce
+<img src="http://estruyf-github.azurewebsites.net/api/VisitorHit?user=stquremwork&repo=cirrus-tl&countColor=9370DB" alt="Repository Views"/>
+<img src="https://img.shields.io/github/stars/stquremwork/cirrus-tl?style=for-the-badge&label=STARS&color=9370DB" alt="GitHub Stars"/>
+<img src="https://img.shields.io/badge/TypeScript-4.7%2B-3178C6?style=for-the-badge" alt="TypeScript"/>
+<img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License"/>
+<img src="https://img.shields.io/badge/Obsidian-0.15.0+-purple?style=for-the-badge" alt="Obsidian"/>
+<img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge" alt="Version"/>
 
-### 📊 Фильтры
-- **По году выпуска** - от самых новых к старым
-- **По рейтингу** - от 1 до 10 или без оценки
-- **По статусу** - просмотрено, смотрю, буду смотреть, заброшено
-- **По тегам** - все теги из вашей библиотеки
-- **Визуальные индикаторы** - активные фильтры отображаются с кнопками удаления
+<i>If you like this project, consider supporting its development!</i><br>
+<i>Your support helps keep this project alive and updated!</i>
 
-### 🎬 Поддерживаемые типы контента
-- **Фильмы** - название, год, рейтинг, статус, теги
-- **Сериалы** - + текущая серия, сезон
-- **Аниме** - + текущая серия
-- **Манга** - + текущая глава/том, автор
-- **Книги** - + текущая часть, автор
-- **Игры** - название, год, рейтинг, автор, статус
+<a href="https://ko-fi.com/stquremwork">
+  <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2" width="150" alt="Support on Ko-fi">
+</a>
+</div>
 
-### ⚙️ Настройки
-- Настройка путей к папкам для каждого типа
-- Включение/отключение типов контента
-- Выбор режима отображения по умолчанию
-- Настройка отображения колонок (автор, прогресс)
-- Кастомизация меток статусов
+<br>
 
-## 📦 Установка
+<a id="features"></a>
 
-### Из релизов (рекомендуется)
-1. Скачайте последний релиз (`main.js`, `manifest.json`, `styles.css`)
-2. Создайте папку `content-library-viewer` в `.obsidian/plugins/`
-3. Скопируйте файлы в эту папку
-4. Перезапустите Obsidian
-5. Включите плагин в настройках
+## ✨ Features
 
-### Сборка из исходников
-```bash
-# Клонируйте репозиторий
-git clone https://github.com/yourusername/obsidian-content-library-viewer.git
+### Core Functionality
+- **Dynamic Filters** - Filters adapt to content type
+- **Dual View Modes** - Table and card layouts
+- **Responsive Design** - Works on all devices
+- **Smart Sorting** - Sort by any column with direction preservation
+- **Instant Search** - Real-time title search with debouncing
 
-# Установите зависимости
-npm install
+### Advanced Filtering
+- **Release Year** - Newest to oldest
+- **Rating** - 1 to 10 or unrated
+- **Status** - Watched, Watching, Plan to Watch, Dropped
+- **Tags** - All tags from your library
+- **Visual Indicators** - Active filters displayed with clear buttons
 
-# Соберите плагин
-npm run build
+### Supported Content Types
+- **Movies** - Title, year, rating, status, tags, banner
+- **TV Shows** - + current episode, season
+- **Anime** - + current episode
+- **Manga** - + current chapter/volume, author
+- **Books** - + current part, author
+- **Games** - Title, year, rating, developer, status
 
-# Для разработки с автоматической пересборкой
-npm run dev
+<a id="installation"></a>
+
+## 📥 Installation
+
+### Manual Installation
+1. Download the latest release from the [Releases page](https://github.com/stquremwork/scrollbase-obsidian-plugin/releases).
+2. Extract `scrollbase-obsidian-plugin.zip` into your vault's `.obsidian/plugins/` folder.
+3. Reload Obsidian and enable **Scrollbase**.
+
+### Via BRAT
+1. Install the [BRAT plugin](https://github.com/TfTHacker/obsidian42-brat).
+2. Go to **Settings > BRAT > Plugins > Add Beta plugin**.
+3. Enter the repository URL: `https://github.com/stquremwork/scrollbase-obsidian-plugin.git`.
+4. Enable the plugin.
+
+
+<a id="usage"></a>
+
+## 🚀 Usage
+
+### Library Structure
+Create the following folder structure in your vault:
+
+```
+Library/
+├── Movies/
+│   └── Movies.md
+├── TV Shows/
+│   └── TV Shows.md
+├── Anime/
+│   └── Anime.md
+├── Manga/
+│   └── Manga.md
+├── Books/
+│   └── Books.md
+└── Games/
+    └── Games.md
 ```
 
-## 🚀 Использование
+### File Format
+Use YAML frontmatter to store your media data:
 
-### Структура библиотеки
-Создайте следующую структуру папок в вашем хранилище:
-
-```
-Библиотека/
-├── Фильмы/
-│   └── Фильмы 2024.md
-├── Сериалы/
-│   └── Сериалы 2024.md
-├── Аниме/
-│   └── Аниме 2024.md
-├── Манга/
-│   └── Манга 2024.md
-├── Книги/
-│   └── Книги 2024.md
-└── Игры/
-    └── Игры 2024.md
-```
-
-### Формат файлов
-Используйте YAML frontmatter для хранения данных:
-
-#### Пример для фильмов
+#### Example for Movies
 ```markdown
 ---
-фильмы:
-  - название: Inception
-    год: 2010
-    рейтинг: 9
-    статус: [просмотрел]
-    теги: [sci-fi, thriller]
-    баннер: https://example.com/inception.jpg
-  - название: Interstellar
-    год: 2014
-    рейтинг: 10
-    статус: [просмотрел]
-    теги: [sci-fi, drama]
+movies:
+  - title: Inception
+    year: 2010
+    rating: 9
+    status: [watched]
+    tags: [sci-fi, thriller]
+    banner: https://example.com/inception.jpg
+  - title: Interstellar
+    year: 2014
+    rating: 10
+    status: [watched]
+    tags: [sci-fi, drama]
 ---
 ```
 
-#### Пример для сериалов/аниме
+#### Example for TV Shows/Anime
 ```markdown
 ---
-сериалы:
-  - название: Breaking Bad
-    год: 2008
-    текущая серия: S5E16
-    рейтинг: 10
-    статус: [просмотрел]
-    теги: [drama, crime]
+tv_shows:
+  - title: Breaking Bad
+    year: 2008
+    current_episode: S5E16
+    rating: 10
+    status: [watched]
+    tags: [drama, crime]
 ---
 ```
 
-#### Пример для книг/манги
+#### Example for Manga/Books
 ```markdown
 ---
-книги:
-  - название: 1984
-    автор: George Orwell
-    год: 1949
-    текущая серия: глава 15
-    рейтинг: 9
-    статус: [читаю]
-    теги: [dystopia, classic]
+manga:
+  - title: Berserk
+    author: Kentaro Miura
+    current_chapter: 364
+    rating: 10
+    status: [reading]
+    tags: [dark fantasy, seinen]
 ---
 ```
 
-#### Пример для игр
-```markdown
+<a id="configuration"></a>
+
+## ⚙️ Configuration
+
+Access plugin settings through Obsidian Settings → Scrollbase Plugin.
+
+### General Settings
+- **Library Path:** Root folder (default: `Library`)
+- **Default View Mode:** Table or Cards
+- **Items Per Page:** Number of items to display (default: 50)
+- **Enable Auto-refresh:** Refresh when files change
+
+### Content Type Settings
+For each content type you can:
+- Enable/disable the type
+- Customize folder path
+- Change display name
+- Configure visible columns
+
+### Display Options
+- **Show Author Column:** For books, manga, games
+- **Show Progress Column:** Current episode/chapter
+- **Show Rating Stars:** Display ratings as stars instead of numbers
+- **Compact Mode:** Reduce spacing for more items
+
+### Advanced Settings
+- **Cache Duration:** How long to cache data (minutes)
+- **Debounce Search:** Delay for search input (ms)
+- **Backup Interval:** Auto-backup frequency (hours)
+
+<a id="development"></a>
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
-игры:
-  - название: The Witcher 3
-    автор: CD Projekt RED
-    год: 2015
-    рейтинг: 10
-    статус: [прошел]
-    теги: [rpg, openworld]
+
+## 💖 Support
+
+If you find this plugin useful, please consider:
+
+- ⭐ Starring the repository on GitHub
+- 🐛 Reporting bugs and suggesting features
+- 📢 Sharing with other Obsidian users
+- ☕ [Buying me a coffee](https://ko-fi.com/stquremwork)
+
 ---
-```
 
-### Доступные статусы
+**Made with ❤️ for the Obsidian community**
 
-#### Для фильмов, сериалов, аниме:
-- `просмотрел` - просмотрено
-- `смотрю` - смотрю сейчас
-- `буду смотреть` - в планах
-- `забросил` - заброшено
+## 🔧 Development
 
-#### Для игр:
-- `прошел` - пройдено
-- `прохожу` - прохожу сейчас
-- `буду проходить` - в планах
-- `забросил` - заброшено
+<div align="center">
+  
+[![Stargazers](https://reporoster.com/stars/dark/stquremwork/scrollbase)](https://github.com/stquremwork/scrollbase/stargazers)
 
-#### Для книг и манги:
-- `прочитал` - прочитано
-- `читаю` - читаю сейчас
-- `буду читать` - в планах
-- `забросил` - заброшено
+[![Star History Chart](https://api.star-history.com/svg?repos=stquremwork/scrollbase&type=Date&theme=dark)](https://www.star-history.com/stquremwork/scrollbase)
 
-### Открытие просмотрщика
-1. **Через команду:** `Ctrl/Cmd + P` → "Открыть просмотрщик библиотеки"
-2. **Через иконку:** Нажмите на иконку библиотеки на боковой панели
-3. **Через горячую клавишу:** Настройте в параметрах Obsidian
-
-## ⚙️ Настройки плагина
-
-### Основные настройки
-- **Путь к библиотеке:** Основная папка (по умолчанию `Библиотека`)
-- **Режим отображения:** Таблица или Карточки
-- **Показывать колонку "Автор":** Для книг, манги, игр
-- **Показывать колонку "Прогресс":** Текущая серия/глава
-
-### Настройка типов контента
-Для каждого типа можно:
-- Включить/выключить
-- Изменить путь к папке
-- Изменить название
-
-### Кастомизация статусов
-Настройте свои метки для статусов в настройках плагина.
-
-## 🎨 Темизация
-
-Плагин использует CSS-переменные Obsidian, поэтому автоматически адаптируется под вашу тему:
-
-```css
-/* Основные переменные */
---background-primary
---background-secondary
---background-modifier-border
---text-normal
---text-muted
---interactive-accent
-```
-
-### Кастомизация стилей
-Добавьте в ваш `snippets/content-library.css`:
-
-```css
-/* Увеличить размер карточек */
-.cards-view {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-}
-
-/* Изменить высоту баннера */
-.card-banner {
-    height: 200px;
-}
-
-/* Кастомные цвета для статусов */
-.status-watch {
-    background: #4CAF50;
-}
-```
-
-## 📱 Адаптивность
-
-Плагин полностью адаптивен и работает на:
-- **Desktop** (1200px+) - полный функционал
-- **Tablet** (768px - 1199px) - оптимизированная панель
-- **Mobile** (< 768px) - компактный режим с скрытием лишних элементов
-
-### Особенности мобильной версии:
-- Скрываются текстовые метки кнопок (остаются только иконки)
-- Автоматическая перестройка панели фильтров
-- Карточки занимают всю ширину экрана
-- Оптимизированные touch-контролы
-
-## 🔧 Разработка
-
-### Требования
-- Node.js 16+
-- npm или yarn
-- TypeScript 4.7+
-
-### Команды разработки
-```bash
-# Установка зависимостей
-npm install
-
-# Разработка с hot-reload
-npm run dev
-
-# Сборка production
-npm run build
-
-# Обновление версии
-npm version patch/minor/major
-```
-
-### Структура проекта
-```
-content-library-viewer/
-├── main.ts              # Основной файл плагина
-├── view.ts              # UI компонент просмотрщика
-├── manifest.json        # Манифест плагина
-├── package.json         # Зависимости и скрипты
-├── tsconfig.json        # Конфигурация TypeScript
-├── esbuild.config.mjs   # Конфигурация сборки
-└── README.md            # Документация
-```
-
-## 🤝 Вклад в проект
-
-Приветствуются pull request'ы! Для больших изменений сначала откройте issue для обсуждения.
-
-### Процесс разработки:
-1. Fork репозитория
-2. Создайте feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit изменения (`git commit -m 'Add some AmazingFeature'`)
-4. Push в branch (`git push origin feature/AmazingFeature`)
-5. Откройте Pull Request
-
-## 📝 TODO / Планы
-
-- [ ] Импорт из других трекеров (MyAnimeList, AniList, Goodreads)
-- [ ] Экспорт в различные форматы (CSV, JSON)
-- [ ] Статистика просмотра (графики, диаграммы)
-- [ ] Интеграция с внешними API (TMDB, IGDB)
-- [ ] Групповые операции (массовое изменение статуса)
-- [ ] Календарь релизов
-- [ ] Рекомендации на основе просмотренного
-- [ ] Синхронизация между устройствами
-
-## 💖 Поддержка
-
-Если вам нравится этот плагин, вы можете поддержать его разработку:
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/)
-
-## 📄 Лицензия
-
-MIT License - см. файл [LICENSE](LICENSE)
-
-## 🙏 Благодарности
-
-- Команде Obsidian за отличный продукт
-- Сообществу за идеи и фидбэк
-- Всем контрибьюторам проекта
+</div>
