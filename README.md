@@ -155,6 +155,9 @@ Library/
 > [!TIP]
 > Use YAML frontmatter for easy data management:
 
+<details>
+<summary>📚 Media Examples</summary>
+
 #### 🎬 Movies Example
 ```markdown
 ---
@@ -205,6 +208,7 @@ manga:
     publisher: "Hakusensha"
 ---
 ```
+</details>
 
 ---
 
@@ -268,7 +272,9 @@ manga:
 
 <br>
 
-### 📊 Project Statistics
+## 📊 Project Statistics
+
+
 <div align="center">
   
 [![Stargazers](https://reporoster.com/stars/dark/stquremwork/scrollbase)](https://github.com/stquremwork/scrollbase/stargazers)
